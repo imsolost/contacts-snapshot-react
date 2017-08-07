@@ -4,9 +4,10 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "react-scripts start -- watch",
     "start:dev": "nodemon src/server.js",
     "db:reset": "dropdb contacts_development && createdb contacts_development && npm run load_schema",
+    "load_session_store": "psql contacts_development < node_modules/connect-pg-simple/table.sql",
     "load_schema": "psql -d contacts_development < src/db/schema/schema.sql",
     "load_contacts": "psql -d contacts_development < test/seed/contacts.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,10 +16,20 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
+    "connect-pg-simple": "^4.2.0",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
     "express": "^4.15.2",
-    "pg-promise": "^6.2.1"
+    "express-session": "^1.15.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pg-promise": "^6.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "^1.0.10"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
