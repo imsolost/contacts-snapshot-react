@@ -7,13 +7,13 @@ export default class Nav extends Component {
 
     return(
       <nav>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <form method="get" action="/contacts/search" className="search-form">
           <input name="q" type="search" placeholder="search" autoFocus/>
           <input type="submit" style={{display: 'none'}} />
         </form>
         <Link to="/contacts/new">New Contact</Link>
-        <Link to="/logout">Logout</Link>
+        <Link to="/login">Logout</Link>
       </nav>
     )
   }

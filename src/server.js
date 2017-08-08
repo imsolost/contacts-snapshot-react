@@ -5,8 +5,8 @@ const app = express()
 const {renderError} = require('./server/utils')
 const routes = require('./server/routes');
 
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views')
+// app.set('view engine', 'ejs');
+// app.set('views', __dirname + '/views')
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }))

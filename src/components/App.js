@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Signup from './Signup'
+import New from './New'
+import ContactDetails from './ContactDetails'
+// import Not_found from './Not_found'
 
 export default class App extends Component {
 
@@ -11,12 +14,13 @@ export default class App extends Component {
         <Router>
           {/* Figure out how to replace Router with a switch and remove the div*/}
           <div>
-            <Route path='/home' component={Home}/>
+            <Route exact path='/' component={Home}/>
             <Route path='/login' component={Login}/>
             <Route path='/signup' component={Signup}/>
-            {/* <Route path='/details/:book_id' component={BookDetails} /> */}
-            {/* <Route path='/new' component={NewBook} /> */}
-            {/* <Route path='*' component={FourOhFour} /> */}
+            <Route path='/contacts/new' component={New} />
+            <Route path='/contacts/:id' component={ContactDetails} />
+
+            {/* <Route path='*' component={Not_found} /> */}
           </div>
         </Router>
     )
